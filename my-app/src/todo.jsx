@@ -28,6 +28,10 @@ export const Todo = ()=> {
     setTodoText("");
   };
 
+const onClickDelete = (index) => {
+  alert(index);
+};
+
   return (
 
      <>
@@ -45,12 +49,12 @@ export const Todo = ()=> {
       <div className="incomplate-area">
         <p className="title">未完了のtodo</p>
         <ul>
-          {incomplateTodos.map((todo) => (
+          {incomplateTodos.map((todo,index) => (
               <li key ={todo} >
                   <div className="list-row">
                     <p className="todo-item">{todo}</p>
                     <button>完了</button>
-                    <button>削除</button>
+                    <button onClick={()=>onClickDelete(index)}>削除</button>
                   </div>
               </li>
 
