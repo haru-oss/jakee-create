@@ -29,7 +29,9 @@ export const Todo = ()=> {
   };
 
 const onClickDelete = (index) => {
-  alert(index);
+  const newTodos = [...incomplateTodos]
+  newTodos.splice(index,1);
+  setIncomplateTodos(newTodos)
 };
 
   return (
