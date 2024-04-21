@@ -49,7 +49,7 @@ const onClickReturn = (index)=>{
   newComplateTodos.splice(index,1);
 
 
-  const newInComplateTodos = [...incomplateTodos,newComplateTodos[index]];
+  const newInComplateTodos = [...incomplateTodos,complateTodos[index]];
 
   setComplateTodos(newComplateTodos);
   setIncomplateTodos(newInComplateTodos);
