@@ -34,6 +34,18 @@ const onClickDelete = (index) => {
   setIncomplateTodos(newTodos)
 };
 
+const onClickComplete = (index)=>{
+  const newIncomplateTodos = [...incomplateTodos];
+  newIncomplateTodos.splice(index,1);
+
+  const newComplateTodos = [...complateTodos,incomplateTodos[index]];
+
+  setIncomplateTodos(newIncomplateTodos);
+  setComplateTodos(newComplateTodos);
+};
+
+
+
   return (
 
      <>
@@ -55,7 +67,7 @@ const onClickDelete = (index) => {
               <li key ={todo} >
                   <div className="list-row">
                     <p className="todo-item">{todo}</p>
-                    <button>完了</button>
+                    <button onClick={()=>onClickComplete(index)}>完了</button>
                     <button onClick={()=>onClickDelete(index)}>削除</button>
                   </div>
               </li>
