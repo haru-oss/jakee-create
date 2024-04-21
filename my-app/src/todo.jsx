@@ -44,6 +44,19 @@ const onClickComplete = (index)=>{
   setComplateTodos(newComplateTodos);
 };
 
+const onClickReturn = (index)=>{
+  const newComplateTodos = [...complateTodos];
+  newComplateTodos.splice(index,1);
+
+
+  const newInComplateTodos = [...incomplateTodos,newComplateTodos[index]];
+
+  setComplateTodos(newComplateTodos);
+  setIncomplateTodos(newInComplateTodos);
+};
+
+
+
 
 
   return (
@@ -88,18 +101,18 @@ const onClickComplete = (index)=>{
       <div className = "complate-area">
         <p className="title">完了のtodo</p>
         <ul>
-            {complateTodos.map((Todo) => (
+            {complateTodos.map((Todo,index) => (
 
               <li key ={Todo} >
                     <div className="list-row">
                       <p className="todo-item">{Todo}</p>
-                      <button>戻す</button>
+                      <button onClick={()=>onClickReturn(index)}>戻す</button>
+
                     </div>
               </li>
                  )
                 )
             }
-
 
         </ul>
       </div>
