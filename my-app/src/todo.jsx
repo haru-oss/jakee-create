@@ -5,16 +5,10 @@ export const Todo = ()=> {
 
 
   const [todoText,setTodoText] = useState("");
-  const [incomplateTodos,setIncomplateTodos] = useState([
-    "todoです",
-    "todoです2",
-  ]);
+  const [incomplateTodos,setIncomplateTodos] = useState([]);
 
 
-  const [complateTodos,setComplateTodos] = useState([
-                       "todoでした",
-                       "todoでした2"
-                       ]);
+  const [complateTodos,setComplateTodos] = useState([]);
 
 
   const onChangeTodoText =  (event) => setTodoText(event.target.value);
