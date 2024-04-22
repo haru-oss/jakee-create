@@ -59,7 +59,10 @@ const onClickReturn = (index)=>{
      <>
 
 
-       <InputTodo/>
+       <InputTodo todoText = {todoText}
+                   onChange ={onChangeTodoText}
+                   onClick ={onClickAdd}/>
+
 
 
 
