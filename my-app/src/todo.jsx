@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./style.css";
+import { InputTodo } from "./components/inputTodo";
 
 export const Todo = ()=> {
 
@@ -57,13 +58,10 @@ const onClickReturn = (index)=>{
 
      <>
 
-      <div className="input-area">
-        <input placeholder="Todoを入力" value={todoText} onChange={onChangeTodoText} />
-        <button onClick={onClickAdd}>追加</button>
 
-      </div>
+       <InputTodo/>
 
-{/* onchangeってなんだ？ 　＝>  テキストボックスに変更があった時に発火するイベント*/}
+
 
 
 
@@ -71,7 +69,7 @@ const onClickReturn = (index)=>{
         <p className="title">未完了のtodo</p>
         <ul>
           {incomplateTodos.map((todo,index) => (
-              <li key ={todo} >
+            <li key ={todo} >
                   <div className="list-row">
                     <p className="todo-item">{todo}</p>
                     <button onClick={()=>onClickComplete(index)}>完了</button>
@@ -81,9 +79,9 @@ const onClickReturn = (index)=>{
 
 
 
-            )
+)
 
-          ) }
+) }
 
         </ul>
       </div>
@@ -106,15 +104,15 @@ const onClickReturn = (index)=>{
               </li>
                  )
                 )
-            }
+              }
 
         </ul>
       </div>
 
 
 
-    </>
 
+            </>
 
 
   );
