@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./style.css";
 import { InputTodo } from "./components/inputTodo";
-import {InComplateArea} from "./components/incomplate_area";
+import {IncompleteTodos} from "./components/incompleteTodos";
 
 export const Todo = ()=> {
 
@@ -67,12 +67,10 @@ const onClickReturn = (index)=>{
 
 
 
-      <InComplateArea
-                       todo ={todo}
-                       index ={index}
-                       inComplate = {incomplateTodos}
-                       onComplate = {onClickComplete}
-                       onDelete = {onClickDelete}/>
+      <IncompleteTodos
+                       todos = {incomplateTodos}
+                       onClickComplete = {onClickComplete}
+                       onClickDelete = {onClickDelete}/>
       {/* <div className="incomplate-area">
         <p className="title">未完了のtodo</p>
         <ul>
