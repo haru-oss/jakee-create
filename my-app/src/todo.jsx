@@ -52,7 +52,7 @@ const onClickReturn = (index)=>{
   setIncomplateTodos(newInComplateTodos);
 };
 
-
+const isMaxLimitIncompletetodos = incomplateTodos.length >= 5
 
 
 
@@ -63,7 +63,17 @@ const onClickReturn = (index)=>{
 
        <InputTodo todoText = {todoText}
                    onChange ={onChangeTodoText}
-                   onClick ={onClickAdd}/>
+                   onClick ={onClickAdd}
+                   disabled = {isMaxLimitIncompletetodos}
+                   />
+
+
+      {isMaxLimitIncompletetodos && (
+        <p style = {{ color :"red"}}>一つ終わらせてから出直してこいクソハゲ老害クソタヌキ！！</p>
+
+      ) }
+
+
 
 
 
